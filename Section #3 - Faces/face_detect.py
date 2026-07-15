@@ -1,14 +1,17 @@
 #pylint:disable=no-member
 
 import cv2 as cv
+import os
 
-img = cv.imread('../Resources/Photos/momoygroup.jpg')
-cv.imshow('Group of 5 people', img)
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
+img = cv.imread(os.path.join(script_dir, '../Resources/Photos/trixia ni.jpg'))
+cv.imshow('1 person', img)
 
 gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 cv.imshow('Gray People', gray)
 
-haar_cascade = cv.CascadeClassifier('haar_face.xml')
+haar_cascade = cv.CascadeClassifier(os.path.join(script_dir, 'haar_face.xml'))
 
 faces_rect = haar_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=1)
 

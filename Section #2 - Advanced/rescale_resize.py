@@ -3,8 +3,8 @@
 import cv2 as cv
 from pathlib import Path
 
-# img = cv.imread('../Resources/Photos/cat.jpg')
-# cv.imshow('Cat', img)
+# img = cv.imread('Resources/Photos/trixia ni.jpg')
+# cv.imshow('trixia', img)
 
 def rescaleFrame(frame, scale=0.75):
     # Images, Videos and Live Video
@@ -23,8 +23,8 @@ def changeRes(width, height):
 
 
 base_dir = Path(__file__).resolve().parent
-video_path = (base_dir / '../Resources/Videos/dog.mp4').resolve()
-output_dir = (base_dir / '../Section 2 output').resolve()
+video_path = (base_dir / 'Resources/Videos/funny cat ni.mp4').resolve()
+output_dir = (base_dir / 'Section 2 output').resolve()
 output_dir.mkdir(parents=True, exist_ok=True)
 output_video_path = output_dir / 'rescale_resize_output.mp4'
 

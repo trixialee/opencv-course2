@@ -8,14 +8,14 @@ BASE_DIR = os.path.dirname(__file__)
 
 haar_cascade = cv.CascadeClassifier(os.path.join(BASE_DIR, 'haar_face.xml'))
 
-people = ['Ben Afflek', 'Elton John', 'Jerry Seinfield', 'Madonna', 'Mindy Kaling', 'momoy2']
+people = ['Ben Afflek', 'Elton John', 'Jerry Seinfield', 'Madonna', 'Mindy Kaling', 'trixia ni']
 # features = np.load('features.npy', allow_pickle=True)
 # labels = np.load('labels.npy')
 
 face_recognizer = cv.face.LBPHFaceRecognizer_create()
 face_recognizer.read(os.path.join(BASE_DIR, 'face_trained.yml'))
 
-img_path = os.path.join(BASE_DIR, '..', 'Resources', 'Photos', 'momoy2.jpg')
+img_path = os.path.join(BASE_DIR, '..', 'Resources', 'Photos', 'trixia ni.jpg')
 img = cv.imread(img_path)
 if img is None:
     raise FileNotFoundError(f"Could not read image: {img_path}")
@@ -39,7 +39,7 @@ cv.imshow('Detected Face', img)
 
 # Save the output image into Section 3 output folder
 # Save the output image into Section 3 output folder with a name-based filename
-out_name = 'momoy2 face recognition result.jpg'
+out_name = 'trixia ni face recognition result.jpg'
 out_path = os.path.join(BASE_DIR, '..', 'Section 3 output', out_name)
 cv.imwrite(out_path, img)
 
